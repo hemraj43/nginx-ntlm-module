@@ -111,8 +111,8 @@ static ngx_int_t ngx_http_upstream_init_ntlm(ngx_conf_t *cf,
 
     hncf = ngx_http_conf_upstream_srv_conf(us, ngx_http_upstream_ntlm_module);
 
-    ngx_conf_init_uint_value(hncf->max_cached, 100);
-    ngx_conf_init_msec_value(hncf->timeout, 60000);
+    ngx_conf_init_uint_value(hncf->max_cached, 1000);
+    ngx_conf_init_msec_value(hncf->timeout, 36000000);
 
     if (hncf->original_init_upstream(cf, us) != NGX_OK) {
         return NGX_ERROR;
